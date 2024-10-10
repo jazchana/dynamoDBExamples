@@ -1,0 +1,19 @@
+{
+  "name": "dynamodbexamples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "sst shell vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sst": "3.1.71"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.145",
+    "vitest": "^2.1.2"
+  }
+}
