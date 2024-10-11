@@ -1,0 +1,106 @@
+[
+    {
+      "username": "alice_j",
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "age": 29,
+      "subscriptionStatus": "Active",
+      "preferences": {
+        "newsletter": true,
+        "notifications": false
+      }
+    },
+    {
+      "username": "bob_smith34",
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "age": 34,
+      "subscriptionStatus": "Inactive",
+      "preferences": {
+        "newsletter": false,
+        "notifications": true
+      }
+    },
+    {
+      "username": "charlie_adams41",
+      "name": "Charlie Adams",
+      "email": "charlie.adams@example.com",
+      "age": 41,
+      "subscriptionStatus": "Active",
+      "preferences": {
+        "newsletter": true,
+        "notifications": true
+      }
+    },
+    {
+      "username": "diana_lee27",
+      "name": "Diana Lee",
+      "email": "diana.lee@example.com",
+      "age": 27,
+      "subscriptionStatus": "Pending",
+      "preferences": {
+        "newsletter": true,
+        "notifications": false
+      }
+    },
+    {
+      "username": "evan_w22",
+      "name": "Evan Walker",
+      "email": "evan.walker@example.com",
+      "age": 22,
+      "subscriptionStatus": "Cancelled",
+      "preferences": {
+        "newsletter": false,
+        "notifications": false
+      }
+    },
+    {
+      "username": "fiona_b36",
+      "name": "Fiona Brown",
+      "email": "fiona.brown@example.com",
+      "age": 36,
+      "subscriptionStatus": "Active",
+      "preferences": {
+        "newsletter": true,
+        "notifications": true
+      },
+      "address": {
+        "street": "123 Main St",
+        "city": "Springfield",
+        "postcode": "12345"
+      }
+    },
+    {
+      "username": "george_e48",
+      "name": "George Evans",
+      "email": "george.evans@example.com",
+      "age": 48,
+      "subscriptionStatus": "Inactive",
+      "preferences": {
+        "newsletter": false,
+        "notifications": true
+      },
+      "address": {
+        "street": "456 Elm St",
+        "city": "Greenfield",
+        "postcode": "67890"
+      }
+    },
+    {
+      "username": "helen_c30",
+      "name": "Helen Clark",
+      "email": "helen.clark@example.com",
+      "age": 30,
+      "subscriptionStatus": "Active",
+      "preferences": {
+        "newsletter": true,
+        "notifications": true
+      },
+      "address": {
+        "street": "789 Oak St",
+        "city": "Hilltown",
+        "postcode": "10112"
+      }
+    }
+  ]
+  
