@@ -5,5 +5,9 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
+    "Users": {
+      "name": string
+      "type": "sst.aws.Dynamo"
+    }
   }
 }

@@ -11,4 +11,5 @@ export default $config({
   async run() {
     await import("./infra/storage");
   },
+
 });

@@ -1,7 +1,6 @@
-export const table = new sst.aws.Dynamo("MyTable", {
+export const table = new sst.aws.Dynamo("Users", {
     fields: {
-      userId: "string",
-      noteId: "string"
+      username: "string",
     },
-    primaryIndex: { hashKey: "userId", rangeKey: "noteId" }
+    primaryIndex: { hashKey: "username" }
   });
