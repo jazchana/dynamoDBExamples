@@ -1,6 +1,10 @@
 import { afterAll, afterEach, describe, expect, it, test } from "vitest";
 import { deleteUsernameRecords, getByUsername, insertUser, insertUserMarshalled, User } from "../respository/usernameRespository";
 
+const fs = require('fs');
+const path = require('path');
+const usersJsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../users.json'), 'utf8'));
+
 describe('Basic Insert Operations', () => {
     const usernames = ["test-user-1", "test-user-2", "test-user-3"]
 
@@ -41,10 +45,7 @@ describe('Basic Insert Operations', () => {
 
     it('Insert users from json file', async () => {
         //given a json file with users
-        const fs = require('fs').readFileSync;
-        const path = require('path');
-
-        const usersData = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '../../users.json'), 'utf8'));
+        const usersData = usersJsonData;
 
         //when we insert each user into the table and marshall the data
         for (const user of usersData) {
@@ -58,9 +59,9 @@ describe('Basic Insert Operations', () => {
     }) 
 
     afterAll(async () => { 
-        //delete all items from the table
-        for (const username of usernames) {
-            await deleteUsernameRecords(username); 
+        // Delete each user from the database
+        for (const user of usersJsonData) {
+            await deleteUsernameRecords(user.username);
         }
     });
     

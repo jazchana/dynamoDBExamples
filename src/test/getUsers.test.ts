@@ -1,17 +1,14 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { insertUser, deleteUsernameRecords, getByUsername, User } from "../respository/usernameRespository";
 
+const fs = require('fs');
+const path = require('path');
+const usersJsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../users.json'), 'utf8'));
 
 describe('Basic get operations', () => {
     beforeAll(async () => {
-        const fs = require('fs');
-        const path = require('path');
-
-        // Read the users.json file
-        const usersData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../users.json'), 'utf8'));
-
         // Insert each user into the database
-        for (const user of usersData) {
+        for (const user of usersJsonData) {
             await insertUser(user);
         } 
     })
@@ -29,15 +26,8 @@ describe('Basic get operations', () => {
     }) 
  
     afterAll(async () => {
-        //delete all items from the table
-        const fs = require('fs');
-        const path = require('path');
-
-        // Read the users.json file
-        const usersData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../users.json'), 'utf8'));
-
         // Delete each user from the database
-        for (const user of usersData) {
+        for (const user of usersJsonData) {
             await deleteUsernameRecords(user.username);
         }
     })
