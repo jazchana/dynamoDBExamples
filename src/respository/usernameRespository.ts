@@ -1,5 +1,5 @@
 import { DeleteCommand, DynamoDBDocumentClient, GetCommand, PutCommand } from "@aws-sdk/lib-dynamodb";
-import { AttributeValue, DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { AttributeValue, ConditionalCheckFailedException, DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { Resource } from "sst";
 
 export type User = {
@@ -25,8 +25,9 @@ export const docClient = DynamoDBDocumentClient.from(client, {
 export const tableName = Resource.Users.name;
 
 export async function insertUser(user: User) {
-    return await docClient.send(new PutCommand({
-        TableName: tableName,
+    try {
+        await docClient.send(new PutCommand({
+            TableName: tableName,
         Item: {
             username: user.username,
             name: user.name,
@@ -34,16 +35,35 @@ export async function insertUser(user: User) {
             age: user.age,
             subscriptionStatus: user.subscriptionStatus,
             preferences: user.preferences
+        },
+        ConditionExpression: 'attribute_not_exists(username)',
+            ReturnValues: 'ALL_OLD'
+        }));
+        return { success: true, message: "User inserted successfully" };
+    } catch (error) {
+        if (error instanceof ConditionalCheckFailedException) {
+            return { success: false, message: "User with this username already exists" };
         }
-    }));
+        throw error;
+    }
 }
 
 //the DynamoDBDocumentClient infers the marshalling from the User type
 export async function insertUserMarshalled(user: User) {
-    return await docClient.send(new PutCommand({
-        TableName: tableName,
-        Item: user
-    }));
+    try {
+        await docClient.send(new PutCommand({
+            TableName: tableName,
+            Item: user,
+            ConditionExpression: 'attribute_not_exists(username)',
+            ReturnValues: 'ALL_OLD'
+        }));
+        return { success: true, message: "User inserted successfully" };
+    } catch (error) {
+        if (error instanceof ConditionalCheckFailedException) {
+            return { success: false, message: "User with this username already exists" };
+        }
+        throw error;
+    }
 }
 
 export async function getByUsername(username: string): Promise<User> {
@@ -58,10 +78,22 @@ export async function getByUsername(username: string): Promise<User> {
 }
 
 export async function deleteUsernameRecords(username: string) {
-    const deleteCommand = new DeleteCommand({
-        TableName: tableName,
-        Key: { username: username }
-    });
-    await docClient.send(deleteCommand);
+    try {
+        const deleteCommand = new DeleteCommand({
+            TableName: tableName,
+            Key: { username: username }
+        });
+        const response = await docClient.send(deleteCommand);
+        
+        if (response.$metadata.httpStatusCode === 200) {
+            return { success: true, message: "User deleted successfully" };
+        } else {
+            console.error(`Failed to delete user with username: ${username}`);
+            return { success: false, message: "Failed to delete user" };
+        }
+    } catch (error) {
+        console.error(`Error deleting user with username ${username}:`, error);
+        throw error;
+    }
 }
 
