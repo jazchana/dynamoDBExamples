@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { insertUser, deleteUsernameRecords, getByUsername, User } from "../respository/usernameRespository";
+import { insertUser, deleteUsernameRecords, getByUsername, User } from "../respository/userRespository";
 
 const fs = require('fs');
 const path = require('path');

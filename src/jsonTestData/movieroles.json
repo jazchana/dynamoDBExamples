@@ -1,161 +1,154 @@
 [
-    {
-      "actor": "Robert Downey Jr.",
-      "movies": [
-        {
-          "title": "Iron Man",
-          "role": "Tony Stark / Iron Man",
-          "year": 2008,
-          "genre": "Action, Sci-Fi"
-        },
-        {
-          "title": "Sherlock Holmes",
-          "role": "Sherlock Holmes",
-          "year": 2009,
-          "genre": "Mystery, Adventure"
-        }
-      ]
-    },
-    {
-      "actor": "Scarlett Johansson",
-      "movies": [
-        {
-          "title": "Lucy",
-          "role": "Lucy",
-          "year": 2014,
-          "genre": "Action, Sci-Fi"
-        },
-        {
-          "title": "Lost in Translation",
-          "role": "Charlotte",
-          "year": 2003,
-          "genre": "Drama, Romance"
-        }
-      ]
-    },
-    {
-      "actor": "Leonardo DiCaprio",
-      "movies": [
-        {
-          "title": "Inception",
-          "role": "Dom Cobb",
-          "year": 2010,
-          "genre": "Action, Sci-Fi"
-        }
-      ]
-    },
-    {
-      "actor": "Natalie Portman",
-      "movies": [
-        {
-          "title": "Thor: Love and Thunder",
-          "role": "Jane Foster / Mighty Thor",
-          "year": 2022,
-          "genre": "Action, Fantasy"
-        }
-      ]
-    },
-    {
-      "actor": "Denzel Washington",
-      "movies": [
-        {
-          "title": "Training Day",
-          "role": "Alonzo Harris",
-          "year": 2001,
-          "genre": "Crime, Drama"
-        },
-        {
-          "title": "Malcolm X",
-          "role": "Malcolm X",
-          "year": 1992,
-          "genre": "Biography, Drama"
-        }
-      ]
-    },
-    {
-      "actor": "Jennifer Lawrence",
-      "movies": [
-        {
-          "title": "The Hunger Games",
-          "role": "Katniss Everdeen",
-          "year": 2012,
-          "genre": "Adventure, Sci-Fi"
-        },
-        {
-          "title": "Silver Linings Playbook",
-          "role": "Tiffany Maxwell",
-          "year": 2012,
-          "genre": "Comedy, Drama"
-        }
-      ]
-    },
-    {
-      "actor": "Tom Hanks",
-      "movies": [
-        {
-          "title": "Forrest Gump",
-          "role": "Forrest Gump",
-          "year": 1994,
-          "genre": "Drama, Romance"
-        },
-        {
-          "title": "Saving Private Ryan",
-          "role": "Captain John H. Miller",
-          "year": 1998,
-          "genre": "War, Drama"
-        },
-        {
-          "title": "Cast Away",
-          "role": "Chuck Noland",
-          "year": 2000,
-          "genre": "Drama, Adventure"
-        }
-      ]
-    },
-    {
-      "actor": "Meryl Streep",
-      "movies": [
-        {
-          "title": "The Devil Wears Prada",
-          "role": "Miranda Priestly",
-          "year": 2006,
-          "genre": "Comedy, Drama"
-        }
-      ]
-    },
-    {
-      "actor": "Brad Pitt",
-      "movies": [
-        {
-          "title": "Fight Club",
-          "role": "Tyler Durden",
-          "year": 1999,
-          "genre": "Drama"
-        },
-        {
-          "title": "Once Upon a Time in Hollywood",
-          "role": "Cliff Booth",
-          "year": 2019,
-          "genre": "Comedy, Drama"
-        }
-      ]
-    },
-    {
-      "actor": "Angelina Jolie",
-      "movies": [
-        {
-          "title": "Maleficent",
-          "role": "Maleficent",
-          "year": 2014,
-          "genre": "Fantasy, Adventure"
-        },
-        {
-          "title": "Salt",
-          "role": "Evelyn Salt",
-          "year": 2010,
-          "genre": "Action, Thriller"
-        }
-      ]
-    }
-  ]
-  
+  {
+    "actor": "Robert Downey Jr.",
+    "movies": [
+      {
+        "title": "Avengers: Endgame",
+        "role": "Tony Stark / Iron Man",
+        "year": 2019,
+        "genre": "Action, Sci-Fi"
+      },
+      {
+        "title": "Sherlock Holmes",
+        "role": "Sherlock Holmes",
+        "year": 2009,
+        "genre": "Mystery, Adventure"
+      }
+    ]
+  },
+  {
+    "actor": "Scarlett Johansson",
+    "movies": [
+      {
+        "title": "Avengers: Endgame",
+        "role": "Natasha Romanoff / Black Widow",
+        "year": 2019,
+        "genre": "Action, Sci-Fi"
+      },
+      {
+        "title": "Lost in Translation",
+        "role": "Charlotte",
+        "year": 2003,
+        "genre": "Drama, Romance"
+      }
+    ]
+  },
+  {
+    "actor": "Leonardo DiCaprio",
+    "movies": [
+      {
+        "title": "Inception",
+        "role": "Dom Cobb",
+        "year": 2010,
+        "genre": "Action, Sci-Fi"
+      },
+      {
+        "title": "Once Upon a Time in Hollywood",
+        "role": "Rick Dalton",
+        "year": 2019,
+        "genre": "Comedy, Drama"
+      }
+    ]
+  },
+  {
+    "actor": "Brad Pitt",
+    "movies": [
+      {
+        "title": "Fight Club",
+        "role": "Tyler Durden",
+        "year": 1999,
+        "genre": "Drama"
+      },
+      {
+        "title": "Once Upon a Time in Hollywood",
+        "role": "Cliff Booth",
+        "year": 2019,
+        "genre": "Comedy, Drama"
+      }
+    ]
+  },
+  {
+    "actor": "Natalie Portman",
+    "movies": [
+      {
+        "title": "Thor: Love and Thunder",
+        "role": "Jane Foster / Mighty Thor",
+        "year": 2022,
+        "genre": "Action, Fantasy"
+      }
+    ]
+  },
+  {
+    "actor": "Chris Hemsworth",
+    "movies": [
+      {
+        "title": "Thor: Love and Thunder",
+        "role": "Thor",
+        "year": 2022,
+        "genre": "Action, Fantasy"
+      },
+      {
+        "title": "Avengers: Endgame",
+        "role": "Thor",
+        "year": 2019,
+        "genre": "Action, Sci-Fi"
+      }
+    ]
+  },
+  {
+    "actor": "Jennifer Lawrence",
+    "movies": [
+      {
+        "title": "The Hunger Games",
+        "role": "Katniss Everdeen",
+        "year": 2012,
+        "genre": "Adventure, Sci-Fi"
+      }
+    ]
+  },
+  {
+    "actor": "Tom Hanks",
+    "movies": [
+      {
+        "title": "Forrest Gump",
+        "role": "Forrest Gump",
+        "year": 1994,
+        "genre": "Drama, Romance"
+      },
+      {
+        "title": "Saving Private Ryan",
+        "role": "Captain John H. Miller",
+        "year": 1998,
+        "genre": "War, Drama"
+      }
+    ]
+  },
+  {
+    "actor": "Meryl Streep",
+    "movies": [
+      {
+        "title": "The Devil Wears Prada",
+        "role": "Miranda Priestly",
+        "year": 2006,
+        "genre": "Comedy, Drama"
+      }
+    ]
+  },
+  {
+    "actor": "Angelina Jolie",
+    "movies": [
+      {
+        "title": "Maleficent",
+        "role": "Maleficent",
+        "year": 2014,
+        "genre": "Fantasy, Adventure"
+      },
+      {
+        "title": "Salt",
+        "role": "Evelyn Salt",
+        "year": 2010,
+        "genre": "Action, Thriller"
+      }
+    ]
+  }
+]

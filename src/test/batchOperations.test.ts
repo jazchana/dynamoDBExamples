@@ -45,6 +45,49 @@ describe("Batch Operations", () => {
         expect(batchWriteResult.UnprocessedItems).toEqual({});
     });
 
+    it("should be able to get multiple items", async () => {
+        const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+        const { DynamoDBDocumentClient, BatchGetCommand } = require("@aws-sdk/lib-dynamodb");
+
+        const client = new DynamoDBClient({});
+        const docClient = DynamoDBDocumentClient.from(client);
+        
+        //given a list of of actors and movies
+        const actorsAndMovies = [
+            { actor: "Robert Downey Jr.", movie: "Avengers: Endgame" },
+            { actor: "Leonardo DiCaprio", movie: "Inception" },
+            { actor: "Meryl Streep", movie: "The Devil Wears Prada" }
+        ];
+
+        //when we get the items in batch
+        const tableName = Resource.MovieRoles.tableName;
+        const batchGetCommand = new BatchGetCommand({
+            RequestItems: {
+                [tableName]: {
+                    Keys: actorsAndMovies.map(item => ({
+                        actor: item.actor,
+                        movie: item.movie
+                    }))
+                }
+            }
+        });
+
+        const batchGetResult = await docClient.send(batchGetCommand);
+
+        //then the items are returned should include
+        const retrievedItems = batchGetResult.Responses[tableName];
+
+        // Iterate through the responses and check for Robert Downey Jr.
+        const robertDowneyJrItem = retrievedItems.find(item => item.actor === "Robert Downey Jr.");
+        
+        // Assertions for Robert Downey Jr.'s item
+        expect(robertDowneyJrItem).toBeDefined();
+        expect(robertDowneyJrItem.movie).toEqual("Avengers: Endgame");
+        expect(robertDowneyJrItem.role).toEqual("Tony Stark / Iron Man");
+        expect(robertDowneyJrItem.year).toEqual(2019);
+        expect(robertDowneyJrItem.genre).toEqual("Action, Sci-Fi"); 
+    });
+
     afterAll(async () => {
         const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
         const { DynamoDBDocumentClient, BatchWriteCommand } = require("@aws-sdk/lib-dynamodb");
