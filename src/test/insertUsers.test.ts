@@ -3,7 +3,7 @@ import { deleteUsernameRecords, getByUsername, insertUser, insertUserMarshalled,
 
 const fs = require('fs');
 const path = require('path');
-const usersJsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../users.json'), 'utf8'));
+const usersJsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '../jsonTestData/users.json'), 'utf8'));
 const usernames = ["test-user-1", "test-user-2", "test-user-3"]
 
 
@@ -25,7 +25,7 @@ describe('Basic Insert Operations', () => {
         //given a list of usernames
         const usernameList = [
             { username: usernames[0] },
-            { username: usernames[1] },
+            { username: usernames[1] }, 
             { username: usernames[2] }
         ] as User[];
         

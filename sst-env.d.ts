@@ -5,6 +5,10 @@ import "sst"
 export {}
 declare module "sst" {
   export interface Resource {
+    "MovieRoles": {
+      "tableName": string
+      "type": "aws.dynamodb/table.Table"
+    }
     "Users": {
       "name": string
       "type": "sst.aws.Dynamo"

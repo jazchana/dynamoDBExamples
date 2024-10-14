@@ -28,14 +28,14 @@ export async function insertUser(user: User) {
     try {
         await docClient.send(new PutCommand({
             TableName: tableName,
-        Item: {
-            username: user.username,
-            name: user.name,
-            email: user.email,
-            age: user.age,
-            subscriptionStatus: user.subscriptionStatus,
-            preferences: user.preferences
-        },
+            Item: {
+                username: user.username,
+                name: user.name,
+                email: user.email,
+                age: user.age,
+                subscriptionStatus: user.subscriptionStatus,
+                preferences: user.preferences
+            },
         ConditionExpression: 'attribute_not_exists(username)',
             ReturnValues: 'ALL_OLD'
         }));

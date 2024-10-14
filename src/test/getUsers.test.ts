@@ -3,7 +3,7 @@ import { insertUser, deleteUsernameRecords, getByUsername, User } from "../respo
 
 const fs = require('fs');
 const path = require('path');
-const usersJsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../users.json'), 'utf8'));
+const usersJsonData = JSON.parse(fs.readFileSync(path.join(__dirname, '../jsonTestData/users.json'), 'utf8'));
 
 describe('Basic get operations', () => {
     beforeAll(async () => {
